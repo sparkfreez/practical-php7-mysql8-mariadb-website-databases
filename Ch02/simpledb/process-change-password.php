@@ -31,7 +31,7 @@
 	if (empty($errors)) { // If everything's OK.              
 try {
 	 // Check that the user has entered the right email address/password combination:
-    $query = "SELECT userid, password FROM users WHERE ( email=? )";
+    $query = "SELECT user_id, password FROM users WHERE ( email=? )";
 	$q = mysqli_stmt_init($dbcon);                                 
     mysqli_stmt_prepare($q, $query);
     // use prepared statement to insure that only text is inserted
