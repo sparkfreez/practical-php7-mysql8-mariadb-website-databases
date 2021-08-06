@@ -35,8 +35,8 @@ try {
 	    $hashed_passcode = password_hash($password1, PASSWORD_DEFAULT); //#6
 		require ('mysqli_connect.php'); // Connect to the db.            #7
 		// Make the query:                                               #8
-		$query = "INSERT INTO users ( first_name, last_name, email, password, registration_date) ";
-		$query .="VALUES( ?, ?, ?, ?, NOW() )";		               // #9
+		$query = "INSERT INTO users (user_id, first_name, last_name, email, password, registration_date) ";
+		$query .="VALUES( null,?, ?, ?, ?, NOW() )";		               // #9
         $q = mysqli_stmt_init($dbcon);                                 // #10
         mysqli_stmt_prepare($q, $query);
         // use prepared statement to insure that only text is inserted
